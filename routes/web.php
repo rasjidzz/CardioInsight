@@ -8,4 +8,4 @@ use App\Http\Controllers\LoginController;
 //     return view('welcome');
 // });
 Route::get('/', [LoginController::class, 'index']);
-
+Route::get('/', [LoginController::class, 'index']);
