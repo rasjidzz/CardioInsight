@@ -16,39 +16,81 @@
           <h1 id="title">Login Page</h1>
         </div>
         <div class="row">
-          <form id="loginForm" class="form">
+          @if(session('success'))
+              <div class="alert alert-success">
+                  {{ session('success') }}
+              </div>
+          @endif
+          {{-- FORM UNTUK LOGIN --}}
+          <form id="loginForm" class="form" action="/login" method="POST">
             <!-- Login Form Fields -->
+            @csrf
             <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+              <input type="email" class="form-control @error('emailLogin') is-invalid @enderror" id="emailLogin" name="emailLogin" placeholder="name@example.com" autofocus required value="{{ old('emailLogin') }}">
               <label for="floatingInput">Email address</label>
+              @error('emailLogin')
+                  <div class="invalid-feedback">
+                      {{ $message }}
+                  </div>
+              @enderror
             </div>
             <div class="form-floating">
-              <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+              <input type="password" class="form-control" id="passwordLogin" name="passwordLogin" placeholder="Password">
               <label for="floatingPassword">Password</label>
             </div>
-            <button type="button" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary">Login</button>
           </form>
-          <form id="signupForm" class="form" style="display:none;">
-            <!-- Signup Form Fields -->
+          {{-- FORM UNTUK REGISTER --}}
+          <form id="registerForm" class="form" style="display:none;" method="POST" action="/register">
+            @csrf
+            <!-- Register Form Fields -->
             <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-              <label for="floatingInput">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" value="{{ old('email') }}">
+                <label for="email">Email address</label>
+                @error('email')
+                    <div class="invalid-feedack">
+                      {{ $message }}
+                    </div>
+                @enderror
             </div>
             <div class="form-floating mb-3">
-              <input type="fullname" class="form-control" id="floatingInput" placeholder="fullname">
-              <label for="floatingInput">Full name</label>
+                <input type="text" class="form-control" id="fullname" name="fullname" placeholder="fullname" value="{{ old('fullname') }}">
+                <label for="fullname">Full name</label>
+                @error('fullname')
+                    <div class="invalid-feedack">
+                      {{ $message }}
+                    </div>
+                @enderror
             </div>
             <div class="form-floating mb-3">
-              <input type="phonenum" class="form-control" id="floatingInput" placeholder="Phone Number">
-              <label for="floatingInput">Phone Number</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="username" value="{{ old('username') }}">
+                <label for="username">Username</label>
+                @error('username')
+                    <div class="invalid-feedack">
+                      {{ $message }}
+                    </div>
+                @enderror
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="phonenum" name="phonenum" placeholder="Phone Number" value="{{ old('phonenum') }}">
+                <label for="phonenum">Phone Number</label>
+                @error('phonenum')
+                    <div class="invalid-feedack">
+                      {{ $message }}
+                    </div>
+                @enderror
             </div>
             <div class="form-floating">
-              <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-              <label for="floatingPassword">Password</label>
+                <input type="password" class="form-control" id="passwordRegister" name="passwordRegister" placeholder="Password">
+                <label for="password">Password</label>
+                @error('passwordRegister')
+                    <div class="invalid-feedack">
+                      {{ $message }}
+                    </div>
+                @enderror
             </div>
-            <button type="button" class="btn btn-primary">Login</button>
-          </form>
-        </div>
+            <button type="submit" class="btn btn-danger">Register</button>
+          </form>    
         {{-- <button id="toggleBtn">Switch to Sign Up</button> --}}
         <div class="toggle-btn">
           <button id="toggleBtn" class="btn btn-link btn-toggle">Switch to Sign Up</button>
@@ -84,17 +126,17 @@
   <script>
     document.getElementById('toggleBtn').addEventListener('click', function() {
       var loginForm = document.getElementById('loginForm');
-      var signupForm = document.getElementById('signupForm');
+      var registerForm = document.getElementById('registerForm');
       var title = document.getElementById('title');
 
       if (loginForm.style.display === 'none') {
         loginForm.style.display = 'block';
-        signupForm.style.display = 'none';
+        registerForm.style.display = 'none';
         title.textContent = 'Login Page';
         this.textContent = 'Switch to Sign Up';
       } else {
         loginForm.style.display = 'none';
-        signupForm.style.display = 'block';
+        registerForm.style.display = 'block';
         title.textContent = 'Sign Up Page';
         this.textContent = 'Switch to Login';
       }
