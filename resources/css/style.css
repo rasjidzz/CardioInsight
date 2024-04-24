@@ -1,0 +1,16 @@
+/* Taruh ini di awal file CSS Anda */
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400&display=swap');
+
+.kaisei {
+    font-family: 'Kaisei Decol', serif;
+}
+
+
+.openSans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.kanit {
+    font-family: 'Kanit', sans-serif;
+}
