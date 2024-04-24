@@ -11,8 +11,8 @@
           {{-- TAMBAHIN LOGO CARDIO INSIGHT --}}
         </div>
       </div>
-      <div class="col-sm-8 text-center">
-        <div class="row">
+      <div class="col-sm-8">
+        <div class="row text-center">
           <h1 id="title">Login Page</h1>
         </div>
         <div class="row">
@@ -45,15 +45,6 @@
             @csrf
             <!-- Register Form Fields -->
             <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" value="{{ old('email') }}">
-                <label for="email">Email address</label>
-                @error('email')
-                    <div class="invalid-feedack">
-                      {{ $message }}
-                    </div>
-                @enderror
-            </div>
-            <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="fullname" name="fullname" placeholder="fullname" value="{{ old('fullname') }}">
                 <label for="fullname">Full name</label>
                 @error('fullname')
@@ -71,6 +62,37 @@
                     </div>
                 @enderror
             </div>
+            <div class="form-floating mb-3">
+                <select class="form-select" id="gender" name="gender">
+                    <option selected disabled>Select Gender</option>
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                </select>
+                <label for="gender">Gender</label>
+                @error('gender')
+                    <div class="invalid-feedack">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+            <div class="form-floating mb-3">
+                <input type="date" class="form-control" id="birthdate" name="birthdate" value="{{ old('birthdate') }}">
+                <label for="birthdate">Date of Birth</label>
+                @error('birthdate')
+                    <div class="invalid-feedack">
+                      {{ $message }}
+                    </div>
+                @enderror
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" value="{{ old('email') }}">
+              <label for="email">Email address</label>
+              @error('email')
+                  <div class="invalid-feedack">
+                    {{ $message }}
+                  </div>
+              @enderror
+          </div>
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="phonenum" name="phonenum" placeholder="Phone Number" value="{{ old('phonenum') }}">
                 <label for="phonenum">Phone Number</label>

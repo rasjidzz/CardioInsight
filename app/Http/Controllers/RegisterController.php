@@ -38,6 +38,8 @@ class RegisterController extends Controller
             'username' => 'required|unique:users,username',
             'phonenum' => 'required',
             'passwordRegister' => 'required|min:4',
+            'gender' => 'required',
+            'birthdate' => 'required'
         ], [
             'email.required' => 'Email is required.',
             'email.email' => 'Invalid email format.',
@@ -48,6 +50,8 @@ class RegisterController extends Controller
             'phonenum.required' => 'Phone number is required.',
             'passwordRegister.required' => 'Password is required.',
             'passwordRegister.min' => 'Password must be at least :min characters.',
+            'gender.required' => 'Gender is required.',
+            'birthdate.required' => 'Date of Birth is required'
         ]);
     
         $validatedData['password'] = bcrypt($validatedData['passwordRegister']); // Perhatikan bahwa di sini kami menggunakan 'password' daripada 'passwordRegister'
