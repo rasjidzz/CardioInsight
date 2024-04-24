@@ -17,6 +17,8 @@ return new class extends Migration
             // $table->string('last_name');
             $table->string('username');
             $table->string('fullname');
+            $table->date('birthdate');
+            $table->integer('gender');
             $table->enum('user_role', ['admin', 'user', 'dokter'])->default('user');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
