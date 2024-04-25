@@ -54,8 +54,8 @@ class RegisterController extends Controller
             'birthdate.required' => 'Date of Birth is required'
         ]);
     
-        $validatedData['password'] = bcrypt($validatedData['passwordRegister']); // Perhatikan bahwa di sini kami menggunakan 'password' daripada 'passwordRegister'
-        unset($validatedData['passwordRegister']); // Kami tidak ingin menyimpan 'passwordRegister' ke dalam database
+        $validatedData['password'] = bcrypt($validatedData['passwordRegister']); 
+        unset($validatedData['passwordRegister']); 
     
         User::create($validatedData);
         return redirect('/login')->with('success', 'Registration successful! Please login.');
