@@ -3,7 +3,8 @@ import React from "react";
 function Auth() {
     return (
         <div>
-            <img src={lobby} alt="" />
+            <p>adad</p>
+            
         </div>
     );
 }

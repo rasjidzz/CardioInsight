@@ -4,6 +4,7 @@ import LandingLayout from "../../layout/LandingLayout";
 import doctor from  '../../assets/doctor.png';
 import lobby from  '../../assets/loby.png';
 import logo2 from  '../../assets/logo2.png';
+
 function LandingPage() {
     return (
         <LandingLayout>
