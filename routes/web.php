@@ -12,5 +12,5 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/', function () {
-    return Inertia::render('layout');
-})->where('any', '.*');
+    return Inertia::render('landing/LandingPage');
+});
