@@ -14,3 +14,4 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/', function () {
     return Inertia::render('landing/LandingPage');
 });
+
