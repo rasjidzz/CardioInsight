@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DataController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -13,5 +14,8 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/', function () {
     return Inertia::render('landing/LandingPage');
+});
+Route::get('/auth', function () {
+    return Inertia::render('auth/Auth');
 });
 
