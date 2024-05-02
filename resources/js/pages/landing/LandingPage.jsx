@@ -19,7 +19,7 @@ function LandingPage() {
                     </div>
                     {/* Position the Button using a wrapper with position styles */}
                     <div className="absolute top-2/4 left-1/2 text-[30px] font-kanit transform -translate-x-1/2 -translate-y-1/2">
-                        <Button text="Check Your Heart Now" className/>
+                        <Button text="Check Your Heart Now " className="text-xl"/>
                     </div>
                 </div>
 
