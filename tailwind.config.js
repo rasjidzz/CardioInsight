@@ -13,6 +13,9 @@ export default {
                 kaisei: "Kaisei Decol, serif",
                 kanit: "Kanit, sans-serif",
             },
+            aspectRatio: {
+                '4/3': '4 / 3',
+            },
         },
     },
     plugins: [],

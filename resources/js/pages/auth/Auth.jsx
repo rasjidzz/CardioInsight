@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import lobby from "../../assets/lobby.png";
 import logo2 from "../../assets/logo2.png";
 import Button from "@/components/Button";
+import { Inertia } from "@inertiajs/inertia";
 
 function Auth() {
     const [isLogin, setIsLogin] = useState(true); // State untuk toggle antara login dan sign up
@@ -10,6 +11,10 @@ function Auth() {
     const toggleForm = () => {
         setIsLogin(!isLogin);
     };
+
+    const handleToHome = () =>{
+        Inertia.visit("/homepage");
+    }
 
     return (
         <div className="min-h-screen flex items-stretch">
@@ -80,7 +85,7 @@ function Auth() {
                                     placeholder="Enter your password"
                                 />
                             </div>
-                            <Button>Log in</Button>
+                            <Button text = "Log in" onClick = {handleToHome}>Log in</Button>
                         </form>
                     ) : (
                         <form>
@@ -175,7 +180,7 @@ function Auth() {
                                 />
                             </div>
 
-                            <Button>Sign Up</Button>
+                            <Button text = "Sign Up" onClick = {handleToHome}>Sign Up</Button>
                         </form>
                     )}
                 </div>
