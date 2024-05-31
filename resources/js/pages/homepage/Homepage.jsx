@@ -260,7 +260,7 @@ function HomePage() {
                 {/* Berguna untuk memunculkan tombol START pada form 1 ,2 , dan 3 */}
                 {(showForm1 || showForm2 || showForm3) && (
                     <div>
-                        <button className=" animate-pulse w-60 h-60 text-custom-green text-[40px] shadow-lg font-bold font-sans rounded-full flex items-center justify-center border-4 border-custom-green">
+                        <button className=" animate-bounce w-60 h-60 text-custom-green text-[40px] shadow-lg font-bold font-sans rounded-full flex items-center justify-center border-4 border-custom-green">
                             START
                         </button>
                     </div>
