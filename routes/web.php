@@ -16,4 +16,9 @@ Route::get('/', function () {
     return Inertia::render('landing/LandingPage');
 });
 
+Route::post('/getResult', [DataController::class, 'getResult']);
 Route::get('/test', [DataController::class, 'test']);
+Route::post('/getData', [DataController::class, 'getData']);
+
+//  Development 
+Route::get('/getToken', [RegisterController::class, 'getToken']);

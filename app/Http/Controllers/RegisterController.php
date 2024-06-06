@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\UserRegistered;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -31,7 +32,14 @@ class RegisterController extends Controller
     //     return redirect('/login')->with('success', 'Registration successful! Please login.');
     // }
 
-    public function store(Request $request){
+    public function getToken()
+    {
+        $token = csrf_token();
+        return response()->json($token);
+    }
+
+    public function store(Request $request)
+    {
         $validatedData = $request->validate([
             'email' => 'required|email:dns|unique:users,email',
             'fullname' => 'required',
@@ -39,7 +47,8 @@ class RegisterController extends Controller
             'phonenum' => 'required',
             'passwordRegister' => 'required|min:4',
             'gender' => 'required',
-            'birthdate' => 'required'
+            'birthdate' => 'required',
+            'user_role' => 'required'
         ], [
             'email.required' => 'Email is required.',
             'email.email' => 'Invalid email format.',
@@ -51,14 +60,17 @@ class RegisterController extends Controller
             'passwordRegister.required' => 'Password is required.',
             'passwordRegister.min' => 'Password must be at least :min characters.',
             'gender.required' => 'Gender is required.',
-            'birthdate.required' => 'Date of Birth is required'
+            'birthdate.required' => 'Date of Birth is required',
+            'user_role.required' => 'User Role is required'
         ]);
-    
-        $validatedData['password'] = bcrypt($validatedData['passwordRegister']); 
-        unset($validatedData['passwordRegister']); 
-    
-        User::create($validatedData);
-        return redirect('/login')->with('success', 'Registration successful! Please login.');
+
+        $validatedData['password'] = bcrypt($validatedData['passwordRegister']);
+        unset($validatedData['passwordRegister']);
+
+        // return response()->json($validatedData);
+        $newUser = User::create($validatedData);
+        event(new UserRegistered($newUser));
+        return response()->json($newUser);
+        // return redirect('/login')->with('success', 'Registration successful! Please login.');
     }
-    
 }

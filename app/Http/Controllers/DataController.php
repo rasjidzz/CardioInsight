@@ -9,10 +9,29 @@ use Carbon\Carbon;
 class DataController extends Controller
 {
     protected $userModel;
-    public function __construct(){
+    public function __construct()
+    {
         $this->userModel = new User();
     }
-    public function test(){
+
+    public function getData()
+    {
+        $systol = 0;
+        $diastol = 0;
+        $bpm = 0;
+        $gula = 0;
+        $kolesterol = 0;
+        $data = [
+            'systol' => $systol,
+            'diastol' => $diastol,
+            'bpm' => $bpm,
+            'gula' => $gula,
+            'kolesterol' => $kolesterol
+        ];
+        return response()->json($data);
+    }
+    public function test()
+    {
         // DATA DUMMY, KIRIM DRI FRONTEND
         $cholerstrolLevel = 2;
         $glucoseLevel = 2;
@@ -21,13 +40,13 @@ class DataController extends Controller
         $physicalActive = 1;
         $beratBadan = 72;
         // DATA DUMMY, KIRIM DRI FRONTEND
-        
+
         $user = $this->userModel->getUserbyUsername('rasjidzz');
-        
+
         $fullname = $user->fullname;
         $birthdate = $user->birthdate;
         $umur = round(Carbon::parse($birthdate)->diffInDays(Carbon::now()));
-        
+
         $data = [
             'fullname' => $fullname,
             'berat_badan' => $beratBadan,
@@ -41,5 +60,4 @@ class DataController extends Controller
 
         return response()->json($data);
     }
-
 }
