@@ -24,7 +24,9 @@ class User extends Authenticatable
         'email',
         'password',
         'birthdate',
-        'gender'
+        'gender',
+        'user_role',
+        'phonenum'
     ];
 
     /**
@@ -50,10 +52,14 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-    public function getUserbyUsername($username){
+    public function getUserbyUsername($username)
+    {
         // Menggunakan metode where() untuk mencari pengguna berdasarkan nama pengguna (username)
         $user = User::where('username', $username)->first();
 
         return $user;
+    }
+    public function result()
+    {
     }
 }

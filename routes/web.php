@@ -12,6 +12,7 @@ Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/register', [RegisterController::class, 'store']);
 
+
 Route::get('/', function () {
     return Inertia::render('landing/LandingPage');
 });
@@ -29,6 +30,13 @@ Route::get('/auth', function () {
     return Inertia::render('auth/Auth');
 });
 
+Route::post('/getResult', [DataController::class, 'getResult']);
+Route::get('/test', [DataController::class, 'test']);
+Route::post('/getData', [DataController::class, 'getData']);
 
+//  Development 
+Route::get('/getToken', [RegisterController::class, 'getToken']);
 
-
+Route::get('/admin', function () {
+    return Inertia::render('adminpage/Admin');
+});
