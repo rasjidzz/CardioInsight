@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import MainLayout from "../../layout/MainLayout";
+import { Inertia } from '@inertiajs/inertia';
+
 
 function HomePage() {
-    const userName = "Nama User"; // Ganti dengan nama user sebenarnya
+    const userName = ""; // Ganti dengan nama user sebenarnya
     const [showForm1, setShowForm1] = useState(true);
     const [showForm2, setShowForm2] = useState(false);
     const [showForm3, setShowForm3] = useState(false);
@@ -24,6 +26,7 @@ function HomePage() {
         setShowForm2(false);
         setShowForm3(true);
     };
+
 
     // Untuk Tombol yang ada di tengah dari 1 sampai 4
     return (
@@ -201,7 +204,7 @@ function HomePage() {
                                 </div>
                                 <button
                                     type="button"
-                                    onClick=""
+                                    onClick={() => Inertia.visit('/result')}
                                     className="mt-2 bg-custom-green text-white py-2 px-4 rounded-full"
                                 >
                                     Go to see result

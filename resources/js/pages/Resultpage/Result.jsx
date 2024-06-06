@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../../css/resultstyle.css';
 import ResultLayout from '../../layout/ResultLayout';
+import { Inertia } from '@inertiajs/inertia';
 
 const Result = () => {
     const userName = "Nama User"; // Ganti dengan nama user sebenarnya
@@ -17,8 +18,7 @@ const Result = () => {
         glucoseLevel: 180,
         systolicBP: 140,
         diastolicBP: 90,
-        pulse: 75,
-        onBack: () => alert("Back button clicked"),
+        pulse: 80,
         onRecommend: () => alert("Recommendation sent to doctor"),
     };
 
@@ -63,7 +63,7 @@ const Result = () => {
                 </div>
 
                 <div className="button-container">
-                    <button className="back-button" onClick={resultData.onBack}>
+                    <button className="back-button" onClick={() => Inertia.visit('/homepage')}>
                         Back
                     </button>
                     <button className="doctor-button" onClick={resultData.onRecommend}>

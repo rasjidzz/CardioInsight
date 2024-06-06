@@ -6,6 +6,18 @@ import Logo from "../../js/assets/logo2.png";
 const userName = "Stevent"; // Deklarasi username
 
 function Navbar() {
+    const handleSmallButton = () => {
+        // Menampilkan alert dengan tombol Yes dan No
+        if (window.confirm('Apakah Anda yakin ingin keluar?')) {
+            // Jika user memilih Yes
+            alert("Anda telah keluar.");
+            // Tambahkan kode untuk logout atau navigasi ke halaman logout di sini
+        } else {
+            // Jika user memilih No
+            alert("Pembatalan logout.");
+        }
+    };
+
     return (
         <nav className="bg-custom-green py-4 px-6 flex justify-between items-center">
             <div className="flex items-center space-x-4">
@@ -23,6 +35,9 @@ function Navbar() {
                 </button>
             </div>
             <div className="flex items-center space-x-4">
+                <button onClick={handleSmallButton} className="text-white text-lg font-semibold hover:bg-red-700 rounded-md">
+                    Log Out
+                </button>
                 <span className="text-white text-lg font-semibold">{userName}</span>
                 <img src={profilePic} alt="Profile" className="w-14 h-14 rounded-full" />
             </div>
