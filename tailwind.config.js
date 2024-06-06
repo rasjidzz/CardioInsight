@@ -10,7 +10,11 @@ export default {
                 "custom-green": "#428C97",
             },
             fontFamily: {
-                "kaisei": 'Kaisei Decol, serif'
+                kaisei: "Kaisei Decol, serif",
+                kanit: "Kanit, sans-serif",
+            },
+            aspectRatio: {
+                '4/3': '4 / 3',
             },
         },
     },

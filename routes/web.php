@@ -15,6 +15,18 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/', function () {
     return Inertia::render('landing/LandingPage');
 });
+Route::get('/homepage', function () {
+    return Inertia::render('homepage/Homepage');
+});
+Route::get('/result', function () {
+    return Inertia::render('pages/ResultPage');
+});
+Route::get('/history', function () {
+    return Inertia::render('pages/HistoryPage');
+});
+Route::get('/auth', function () {
+    return Inertia::render('auth/Auth');
+});
 
 Route::post('/getResult', [DataController::class, 'getResult']);
 Route::get('/test', [DataController::class, 'test']);

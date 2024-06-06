@@ -4,8 +4,20 @@ import LandingLayout from "../../layout/LandingLayout";
 import doctor from "../../assets/doctor.png";
 import lobby from "../../assets/loby.png";
 import logo2 from "../../assets/logo2.png";
+import { Inertia } from "@inertiajs/inertia";
 
 function LandingPage() {
+    const handleToAuth = () => {
+        Inertia.visit("/auth");
+    };
+
+    const scrollToBottom = () => {
+        window.scrollTo({
+            top: document.documentElement.scrollHeight,
+            behavior: "smooth",
+        });
+    };
+
     return (
         <LandingLayout>
             <div className="flex flex-col items-center overflow-hidden">
@@ -22,22 +34,42 @@ function LandingPage() {
                         Pulse by Pulse, Protecting Hearts
                     </div>
                     {/* Position the Button using a wrapper with position styles */}
-                    <div className="absolute top-2/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <Button text="Check Your Heart Now" />
+                    <div className="absolute top-2/4 left-1/2 text-[30px] font-kanit transform -translate-x-1/2 -translate-y-1/2">
+                        <Button
+                            text="Check Your Heart Now "
+                            className="text-xl"
+                            onClick={handleToAuth}
+                        />
+                    </div>
+                    <div>
+                        <svg
+                            className="animate-bounce absolute bottom-1/3 left-1/2 transform -translate-x-1/2 w-12 h-12 text-custom-green cursor-pointer bg-white rounded-full"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            onClick={scrollToBottom}
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                            />
+                        </svg>
                     </div>
                 </div>
 
-                <div className="w-full m-14 bg-white p-4 mt-4 flex flex-col md:flex-row">
+                <div className="w-full h-screen bg-white p-4 flex flex-col md:flex-row items-center">
                     <img
                         src={doctor}
                         alt="Doctor"
-                        className="mb-4 md:mb-0 md:mr-8 w-full md:w-auto h-auto"
+                        className="mb-4 md:mb-0 md:mr-8 w-full md:w-auto h-1/2"
                     />
                     <div className="flex-1">
-                        <div className="text-[30px] md:text-[24px] text-custom-green">
+                        <div className="text-[50px] md:text-[24px] text-custom-green font-kanit">
                             Lorem ipsum dolor sit amet
                         </div>
-                        <p className="text-[15px] mt-2 font-kaisei text-justify">
+                        <p className="text-[25px] mt-2 font-kaisei text-justify">
                             Lorem ipsum dolor sit amet consectetur adipisicing
                             elit. Nam natus itaque tempora ex, quisquam fuga
                             perspiciatis nemo error officia numquam hic fugiat,

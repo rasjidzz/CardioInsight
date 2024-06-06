@@ -6,7 +6,7 @@ import logo2 from "../assets/logo2.png"
 
 function Footer() {
     return (
-        <div className="bg-custom-green p-4 w-full h-60 flex justify-between items-center">
+        <div className="bg-custom-green p-4 w-full h-52 flex justify-between items-center">
             <img src={logo2} alt="Logo" className="h-14 m-4" />
             <div className="flex items-center m-28">
                 <a
