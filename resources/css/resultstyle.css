@@ -1,0 +1,107 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e7e7e7;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.result-container {
+    width: 100%; /* Menggunakan lebar penuh */
+    max-width: 800px; /* Mengatur lebar maksimal */
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Tengah di dalam container */
+}
+
+.result-highlight {
+    color: #191919;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.user-info,
+.user-stats {
+    margin-bottom: 20px;
+}
+
+.user-info p,
+.stat-item h3,
+.blood-pressure-values p {
+    margin: 5px 0;
+}
+
+.stat-item {
+    margin-bottom: 10px;
+}
+
+.stat-item h3 {
+    color: #428c97;
+}
+
+.stat-value {
+    font-size: 18px;
+}
+
+.normal {
+    color: green;
+}
+
+.above-normal {
+    color: orange;
+}
+
+.well-above-normal {
+    color: red;
+}
+
+.blood-pressure {
+    background-color: #e7e7e7;
+    width: 100%;
+    max-width: 400px; /* Mengatur lebar maksimal */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.blood-pressure-values {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.back-button,
+.doctor-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.back-button {
+    background-color: #d9d9d9;
+    color: #191919;
+}
+
+.doctor-button {
+    background-color: #428c97;
+    color: white;
+}

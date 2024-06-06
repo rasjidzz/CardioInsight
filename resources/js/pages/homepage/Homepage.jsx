@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MainLayout from "../../layout/MainLayout";
 
 function HomePage() {
-    const userName = "Nama User"; // Ganti dengan nama user sebenarnya
+    const userName = "Nama apa"; // Ganti dengan nama user sebenarnya
     const [showForm1, setShowForm1] = useState(true);
     const [showForm2, setShowForm2] = useState(false);
     const [showForm3, setShowForm3] = useState(false);
@@ -92,6 +92,7 @@ function HomePage() {
                                     name="bloodPressure"
                                     className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                     placeholder="Mg/DL"
+                                    readOnly
                                 />
                             </div>
                             <button
@@ -114,7 +115,7 @@ function HomePage() {
                                     htmlFor="bloodPressure"
                                     className="block font-sans font-semibold text-lg text-gray-700"
                                 >
-                                    Tekanan Darah
+                                    Blood Preasure
                                 </label>
                                 <input
                                     type="text"
@@ -122,6 +123,7 @@ function HomePage() {
                                     name="bloodPressure"
                                     className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                     placeholder="Masukkan Tekanan Darah"
+                                    readOnly
                                 />
                             </div>
                             <button
@@ -152,6 +154,7 @@ function HomePage() {
                                     name="bloodPressure"
                                     className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                     placeholder="Mg/DL"
+                                    readOnly
                                 />
                             </div>
                             <button
@@ -260,7 +263,7 @@ function HomePage() {
                 {/* Berguna untuk memunculkan tombol START pada form 1 ,2 , dan 3 */}
                 {(showForm1 || showForm2 || showForm3) && (
                     <div>
-                        <button className=" animate-bounce w-60 h-60 text-custom-green text-[40px] shadow-lg font-bold font-sans rounded-full flex items-center justify-center border-4 border-custom-green">
+                        <button className=" animate-pulse w-60 h-60 text-custom-green text-[40px] shadow-lg font-bold font-sans rounded-full flex items-center justify-center border-4 border-custom-green">
                             START
                         </button>
                     </div>

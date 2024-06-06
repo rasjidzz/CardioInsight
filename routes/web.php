@@ -19,12 +19,16 @@ Route::get('/homepage', function () {
     return Inertia::render('homepage/Homepage');
 });
 Route::get('/result', function () {
-    return Inertia::render('pages/ResultPage');
+    return Inertia::render('Resultpage/Result');
 });
 Route::get('/history', function () {
-    return Inertia::render('pages/HistoryPage');
+    return Inertia::render('historypage/Historypage');
 });
+
 Route::get('/auth', function () {
     return Inertia::render('auth/Auth');
 });
+
+
+
 
