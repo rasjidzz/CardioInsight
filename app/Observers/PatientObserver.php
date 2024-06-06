@@ -13,10 +13,10 @@ class PatientObserver
     public function created(Patient $patient): void
     {
         // Membuat entri baru di tabel handles dengan patient_id yang sesuai
-        Handle::create([
-            'patient_id' => $patient->id,
-            // Anda dapat menetapkan nilai 'doctor_id' sesuai dengan logika aplikasi Anda
-        ]);
+        // Handle::create([
+        //     'patient_id' => $patient->id,
+        //     // Anda dapat menetapkan nilai 'doctor_id' sesuai dengan logika aplikasi Anda
+        // ]);
     }
 
     /**
