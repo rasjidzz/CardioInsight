@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import '../../../css/docstyle.css'; // Adjust the path based on your directory structure
+import { Inertia } from '@inertiajs/inertia';
+import '../../../css/adminstyle.css'; // Adjust the path based on your directory structure
 
 const patients = [
-    { id: 1, name: 'John Doe', age: 30, PKVStatus: 'Yes' },
-    { id: 2, name: 'Jane Doe', age: 25, PKVStatus: 'No' },
-    { id: 3, name: 'Mary Johnson', age: 40, PKVStatus: 'Yes' },
-    { id: 4, name: 'Michael Smith', age: 50, PKVStatus: 'No' },
-    { id: 5, name: 'Patricia Brown', age: 35, PKVStatus: 'Yes' },
-    { id: 6, name: 'James Wilson', age: 45, PKVStatus: 'No' },
+    { id: 1, name: 'John Doe', age: 30, Gender: 'Male' },
+    { id: 2, name: 'Jane Doe', age: 25, Gender: 'Female' },
+    { id: 3, name: 'Mary Johnson', age: 40, Gender: 'Female' },
+    { id: 4, name: 'Michael Smith', age: 50, Gender: 'Male' },
+    { id: 5, name: 'Patricia Brown', age: 35, Gender: 'Female' },
+    { id: 6, name: 'James Wilson', age: 45, Gender: 'Male' },
     // Add more patient objects here with PKVStatus
 ];
 
@@ -34,7 +35,7 @@ const App = () => {
     const handleLogout = () => {
         const confirmation = window.confirm('Are you sure you want to logout?');
         if (confirmation) {
-            // Handle actual logout logic here
+            Inertia.visit('/auth');// Handle actual logout logic here
             console.log('Logged out');
         }
     };
@@ -50,7 +51,7 @@ const App = () => {
                     <div key={patient.id} className="patient-card">
                         <h3>{patient.name}</h3>
                         <p>Age: {patient.age}</p>
-                        <p>PKV Status: {patient.PKVStatus}</p>
+                        <p>Gender: {patient.Gender}</p>
                         {assignedDoctors[patient.id] ? (
                             <p>{assignedDoctors[patient.id]}</p>
                         ) : (

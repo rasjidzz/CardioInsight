@@ -25,3 +25,9 @@ Route::get('/admin', function () {
 Route::get('/result', function () {
     return Inertia::render('result/Result');
 });
+Route::get('/doctor', function () {
+    return Inertia::render('doctorpage/Doctor');
+});
+Route::get('/doctorrecom', function () {
+    return Inertia::render('doctorpage/DoctorRecom');
+});

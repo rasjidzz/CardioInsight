@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../../css/resultstyle.css';
-import LandingLayout from "../../layout/LandingLayout"
 
 const Result = () => {
     // Data dummy untuk showcase

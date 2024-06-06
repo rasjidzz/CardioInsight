@@ -10,7 +10,7 @@ body {
 }
 
 .result-container {
-  max-width: 800px; /* Ubah ukuran lebar kontainer sesuai kebutuhan Anda */
+  max-width: auto; /* Ubah ukuran lebar kontainer sesuai kebutuhan Anda */
   padding: 20px;
   background-color: #F2F2F2;
   border-radius: 10px;
